@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Mopups:PopupPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SfListViewIssue.OtherPopup"
+    xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"         
+    xmlns:Mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+    Title="OtherPopup">
+    <VerticalStackLayout>
+        <Button 
+                Text="Close Popup"
+                TextColor="Black"
+                FontSize="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Command="{Binding ClosePopupCommand}"/>
+        <syncfusion:SfListView
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                AutoFitMode="DynamicHeight"
+                CachingStrategy="RecycleTemplate"
+                ItemsSourceChangeCachingStrategy="RecycleItems"
+                SelectionMode="None"
+                ItemsSource="{Binding Items}">
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label
+                            Text="{Binding Name}"
+                            TextColor="Black"
+                            FontSize="20"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
+    </VerticalStackLayout>
+</Mopups:PopupPage>
